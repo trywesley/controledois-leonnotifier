@@ -28,7 +28,7 @@ setInterval(check, 60000)
 
 Client.on("message", message => {
 
-if(!message.content.startsWith("lastVideo")) return
-console.log(Client.lastVideo)
+if(!message.content.startsWith("ping")) return
+Client.channels.cache.get(process.env.DISCORD_CHANNEL).send(Client.ws.ping)
 
 })
