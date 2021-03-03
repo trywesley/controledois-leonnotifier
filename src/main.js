@@ -24,7 +24,7 @@ async function checkLeon (id) {
     return videoInfo.tags ? videoInfo.tags.includes("leon") : null
 }
 
-setInterval(check, 30000)
+setInterval(check, 60000)
 
 Client.on("message", message => {
 
