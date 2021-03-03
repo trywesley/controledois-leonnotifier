@@ -21,7 +21,7 @@ async function check ()  {
 
 async function checkLeon (id) {
     const videoInfo = await getVideoDetails(id)
-    return videoInfo.tags.includes("leon")
+    return videoInfo.tags ? videoInfo.tags.includes("leon") : null
 }
 
 setInterval(check, 30000)
