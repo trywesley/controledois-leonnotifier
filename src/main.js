@@ -4,25 +4,30 @@ const getLastVideo = require("./structures/youtube/getLastVideo")
 const DiscordClient = require("./structures/discord/Client")
 const Client = new DiscordClient(process.env.TOKEN)
 
-async function saveLastVideo () {
-    const lastVideo = await getLastVideo()
-    Client.lastVideo = lastVideo
-}
-
 async function check ()  {
     const lastVideo = await getLastVideo()
     const savedLastVideo = Client.lastVideo
     
     if(lastVideo.link === saveLastVideo.link) return
-    const checked = checkLeon(lastVideo.id.split(":")[2])
+    const checked = await checkLeon(lastVideo.id.split(":")[2])
+    if(checked.includesLeon) {
+        sendHandler(checked.videoInfo)
+    }
+
+    Client.lastVideo = lastVideo
 }
 
 async function checkLeon (id) {
-    const videoInfo = getVideoDetails(id)
-    return videoInfo.tags.includes("leon")
+    const videoInfo = await getVideoDetails(id)
+    const returnObject = {
+        includesLeon: videoInfo.tags.includes("leon"),
+        videoInfo: videoInfo
+    }
+
+    return returnObject
 }
 
-saveLastVideo()
+// setInterval(check, 30000)
 
 Client.on("message", message => {
 
