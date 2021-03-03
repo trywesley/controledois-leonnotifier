@@ -1,6 +1,7 @@
 require('dotenv').config()
 
 const getLastVideo = require("./structures/youtube/getLastVideo")
+const sendHandler = require("./structures/discord/sendHandler")
 const DiscordClient = require("./structures/discord/Client")
 const Client = new DiscordClient(process.env.TOKEN)
 
