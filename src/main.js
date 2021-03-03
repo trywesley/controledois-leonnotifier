@@ -28,7 +28,7 @@ async function checkLeon (id) {
     return returnObject
 }
 
-// setInterval(check, 30000)
+setInterval(check, 30000)
 
 Client.on("message", message => {
 
