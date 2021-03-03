@@ -8,6 +8,9 @@ module.exports = class LeonC2NotifierClient extends Client {
                 
 		this.acess = ["451920956768649226"]
                 this.Discord = Discord
+                this.lastVideo = {
+                    link: null
+                }
                 loadPRTYPS.load()
 	}
         
