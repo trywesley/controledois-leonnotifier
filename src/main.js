@@ -14,10 +14,12 @@ async function check ()  {
     const savedLastVideo = Client.lastVideo
     
     if(lastVideo.link === saveLastVideo.link) return
+    const checked = checkLeon(lastVideo.id.split(":")[2])
 }
 
-async function checkLeon () {
-    const videoInfo = getVideoDetails(url)
+async function checkLeon (id) {
+    const videoInfo = getVideoDetails(id)
+    return videoInfo.tags.includes("leon")
 }
 
 saveLastVideo()
