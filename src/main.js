@@ -13,7 +13,7 @@ saveLastVideo()
 
 Client.on("message", message => {
 
-if(!message.content.startsWith("1")) return
-message.reply("555")
+if(!message.content.startsWith("lastVideo")) return
+message.reply(Client.lastVideoURL)
 
 })
