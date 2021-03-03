@@ -9,7 +9,7 @@ async function check ()  {
     const lastVideo = await getLastVideo()
     const savedLastVideo = Client.lastVideo
     
-    if(lastVideo.link === saveLastVideo.link) return
+    if(lastVideo.link === savedLastVideo.link) return
     const checked = await checkLeon(lastVideo.id.split(":")[2])
     if(checked.includesLeon) {
         sendHandler(checked.videoInfo, Client)
