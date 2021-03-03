@@ -6,7 +6,18 @@ const Client = new DiscordClient(process.env.TOKEN)
 
 async function saveLastVideo () {
     const lastVideo = await getLastVideo()
-    Client.lastVideoURL = lastVideo.link
+    Client.lastVideo = lastVideo
+}
+
+async function check ()  {
+    const lastVideo = await getLastVideo()
+    const savedLastVideo = Client.lastVideo
+    
+    if(lastVideo.link === saveLastVideo.link) return
+}
+
+async function checkLeon () {
+    const videoInfo = getVideoDetails(url)
 }
 
 saveLastVideo()
