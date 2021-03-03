@@ -1,5 +1,5 @@
 const { Client } = require("discord.js")
-const loadPRTYPS = require("../../strc/prtyps/proto")
+const loadPRTYPS = require("../../structures/videoSendPrototype")
 
 module.exports = class LeonC2NotifierClient extends Client {
 	constructor(token) {
