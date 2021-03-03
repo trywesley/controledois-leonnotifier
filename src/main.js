@@ -1,12 +1,15 @@
 require('dotenv').config()
 
-const RSSParser = require("rss-parser")
-const Parser = new RSSParser()
+const getLastVideo = require("./structures/youtube/getLastVideo")
 const DiscordClient = require("./structures/discord/Client")
 const Client = new DiscordClient(process.env.TOKEN)
 
-Parser.parseURL("https://www.youtube.com/feeds/videos.xml?channel_id=UCSRmIdDu1XFDr2iViBvcEDA")
-.then(parsed => console.log(parsed))
+async function saveLastVideo () {
+    const lastVideo = await getLastVideo()
+    Client.lastVideoURL = lastVideo.link
+}
+
+saveLastVideo()
 
 Client.on("message", message => {
 
