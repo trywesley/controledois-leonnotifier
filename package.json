@@ -25,6 +25,7 @@
     "opusscript": "0.0.7",
     "path": "^0.12.7",
     "request": "^2.88.2",
+    "rss-parser": "^3.7.2"
     "sox-audio": "^0.3.0",
     "youtube-duration": "^1.0.0",
     "youtube-search": "^1.1.4",
