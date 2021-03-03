@@ -7,25 +7,21 @@ const Client = new DiscordClient(process.env.TOKEN)
 
 async function check ()  {
     const lastVideo = await getLastVideo()
-    const savedLastVideo = Client.lastVideo
+    const lastVideoID = lastVideo.id.split(":")[2]
+    const savedLastVideoID = Client.lastVideoID
     
-    if(lastVideo.link === savedLastVideo.link) return
-    const checked = await checkLeon(lastVideo.id.split(":")[2])
-    if(checked.includesLeon) {
-        sendHandler(checked.videoID, Client)
+    if(lastVideoID === savedLastVideoID) return
+    const checked = await checkLeon(lastVideoID)
+    if(checked) {
+        sendHandler(lastVideoID, Client)
     }
 
-    Client.lastVideo = lastVideo
+    Client.lastVideoID = lastVideoID
 }
 
 async function checkLeon (id) {
     const videoInfo = await getVideoDetails(id)
-    const returnObject = {
-        includesLeon: videoInfo.tags.includes("leon"),
-        videoID: id
-    }
-
-    return returnObject
+    return videoInfo.tags.includes("leon")
 }
 
 setInterval(check, 30000)
