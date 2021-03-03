@@ -1,3 +1,5 @@
+const fetch = require("node-fetch")
+
 module.exports = async function gVD (id) {
     const video = await fetch("https://www.googleapis.com/youtube/v3/videos?id=" + id + "&key=" + process.env.YOUTUBE_KEY + "&part=snippet")
     .then(res => res.json())
