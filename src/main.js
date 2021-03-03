@@ -25,6 +25,6 @@ saveLastVideo()
 Client.on("message", message => {
 
 if(!message.content.startsWith("lastVideo")) return
-message.reply(Client.lastVideoURL)
+console.log(Client.lastVideo)
 
 })
