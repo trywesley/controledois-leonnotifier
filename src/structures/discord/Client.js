@@ -1,4 +1,4 @@
-const { Client } = require("discord.js")
+const { Client, Discord } = require("discord.js")
 const loadPRTYPS = require("../videoSendPrototype")
 
 module.exports = class LeonC2NotifierClient extends Client {
@@ -7,6 +7,7 @@ module.exports = class LeonC2NotifierClient extends Client {
 		super.login(token)
                 
 		this.acess = ["451920956768649226"]
+                this.Discord = Discord
                 loadPRTYPS.load()
 	}
         
