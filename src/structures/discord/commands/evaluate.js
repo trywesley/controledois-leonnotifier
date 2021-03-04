@@ -2,7 +2,7 @@ const util = require('util')
 
 module.exports = async function evaluate(Client, content, channel) {
     const regex = /<@!?(\d{16,18})>/g
-    content = content.replace(reg, 'Client.users.cache.get("$1")')
+    content = content.replace(regex, 'Client.users.cache.get("$1")')
     content = content.split(" ").slice(1).join(" ")
  
     let result
