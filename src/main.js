@@ -8,13 +8,15 @@ const Client = new DiscordClient(process.env.TOKEN)
 async function check ()  {
     const lastVideo = await getLastVideo()
     const lastVideoID = lastVideo.id.split(":")[2]
-    const savedLastVideoID = Client.lastVideoID
+    const savedLastVideosID = Client.lastVideosID
     
-    if(lastVideoID === savedLastVideoID) return
+    if(savedLastVideosID.includes(lastVideoID)) return
     const checked = await checkLeon(lastVideoID)
     const trueorfalse = checked ? true : false
     sendHandler(lastVideoID, Client, trueorfalse)
-    Client.lastVideoID = lastVideoID
+    
+    Client.lastVideosID.pop()
+    Client.lastVideosID.splice(0, 0, lastVideoID)
 }
 
 async function checkLeon (id) {
@@ -32,8 +34,6 @@ Client.channels.cache.get(process.env.DISCORD_CHANNEL).send(Client.ws.ping)
 })
 
 Client.on("ready", async () => {
-    const lastMessage = await Client.channels.cache.get(process.env.SAVE_CHANNEL).messages.fetch().then(msg => msg.first().content)
-    const fatied = lastMessage.split("/")
-
-    Client.lastVideoID = fatied[fatied.length-1]
+    const msgs = await desposito.channels.cache.get(process.env.SAVE_CHANNEL).messages.fetch({limit: 5}).then(msgs => msgs.map(msg => msg.content.split("/")[3]))
+    Client.lastVideosID = msgs
 })
