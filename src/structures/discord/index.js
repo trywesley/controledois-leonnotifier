@@ -1,4 +1,4 @@
 module.exports = {
-    Client: require("./Client"),
+    DiscordClient: require("./Client"),
     sendHandler: require("./sendHandler")
 }
