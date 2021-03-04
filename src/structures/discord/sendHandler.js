@@ -1,4 +1,4 @@
-module.exports = async function sH (id, Client) {
+module.exports = async function sH (id, Client, trueorfalse) {
     const channelRCDN = Client.channels.cache.get(process.env.DISCORD_CHANNEL)    
     const channelSAVE = Client.channels.cache.get(process.env.SAVE_CHANNEL)
 
