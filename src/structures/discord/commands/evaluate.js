@@ -5,6 +5,11 @@ module.exports = async function evaluate(Client, content, channel) {
     content = content.replace(regex, 'Client.users.cache.get("$1")')
     content = content.split(" ").slice(1).join(" ")
  
+    if(content === "logs") {
+        const logs = Client.logs
+        return channel.send(logs, {code: 'js'})
+    }
+
     let result
     try {
         const evaled = await eval(content)
