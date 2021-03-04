@@ -12,10 +12,8 @@ async function check ()  {
     
     if(lastVideoID === savedLastVideoID) return
     const checked = await checkLeon(lastVideoID)
-    if(checked) {
-        sendHandler(lastVideoID, Client)
-    }
-
+    const trueorfalse = checked ? true : false
+    sendHandler(lastVideoID, Client, trueorfalse)
     Client.lastVideoID = lastVideoID
 }
 
