@@ -1,8 +1,7 @@
 require('dotenv').config()
 
 const { getLastVideo, getVideoDetails } = require("./structures/youtube")
-const sendHandler = require("./structures/discord/sendHandler")
-const DiscordClient = require("./structures/discord/Client")
+const { DiscordClient, sendHandler } = require("./structures/discord")
 const Client = new DiscordClient(process.env.TOKEN)
 
 async function check ()  {
@@ -27,10 +26,10 @@ async function checkLeon (id) {
 setInterval(check, 60000)
 
 Client.on("message", message => {
-
-if(!message.content.startsWith("ping")) return
-Client.channels.cache.get(process.env.DISCORD_CHANNEL).send(Client.ws.ping)
-
+    if(!Client.acess.includes(message.author.id)) return
+    if(message.content.startsWith("evaluate")) {
+        require("./structures/discord/commands/evaluate")(Client, message.content, message.channel)
+    }
 })
 
 Client.on("ready", async () => {
