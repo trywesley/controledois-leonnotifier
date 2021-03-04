@@ -5,7 +5,7 @@ module.exports = class LeonC2NotifierClient extends Client {
 		super()
 		super.login(token)
                 
-		this.acess = ["451920956768649226"]
+		this.acess = ["451920956768649226", "317714973784670208"]
                 this.lastVideoID = null
 	}
         
