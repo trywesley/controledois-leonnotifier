@@ -34,6 +34,6 @@ Client.channels.cache.get(process.env.DISCORD_CHANNEL).send(Client.ws.ping)
 })
 
 Client.on("ready", async () => {
-    const msgs = await desposito.channels.cache.get(process.env.SAVE_CHANNEL).messages.fetch({limit: 5}).then(msgs => msgs.map(msg => msg.content.split("/")[3]))
+    const msgs = await Client.channels.cache.get(process.env.SAVE_CHANNEL).messages.fetch({limit: 5}).then(msgs => msgs.map(msg => msg.content.split("/")[3]))
     Client.lastVideosID = msgs
 })
