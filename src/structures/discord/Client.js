@@ -9,7 +9,12 @@ module.exports = class LeonC2NotifierClient extends Client {
                 this.lastVideoID = null
 	}
         
-	get rssUsage () {
-		return Math.round(process.memoryUsage().rss / 1024 / 1024)
+	get status () {
+            const object = {
+                ping: this.ws.ping,
+                rssUsage: Math.round(process.memoryUsage().rss / 1024 / 1024) + "MB",
+                checkInterval: Client.check_interval,
+            }
+		return object
 	}
 }
