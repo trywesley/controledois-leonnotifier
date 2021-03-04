@@ -11,10 +11,9 @@ module.exports = class LeonC2NotifierClient extends Client {
         
 	get status () {
             const object = {
-                ping: this.ws.ping,
+                ping: this.ws.ping + "ms",
                 rssUsage: Math.round(process.memoryUsage().rss / 1024 / 1024) + "MB",
-                checkInterval: Client.check_interval, 
-                logs: this._logs.join("\n")
+                checkInterval: Client.check_interval
             }
             return object
 	}
