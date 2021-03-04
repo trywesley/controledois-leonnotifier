@@ -31,8 +31,8 @@ Client.channels.cache.get(process.env.DISCORD_CHANNEL).send(Client.ws.ping)
 
 })
 
-Client.on("ready", () => {
-    const lastMessage = Client.channels.cache.get(process.env.SAVE_CHANNEL).messages.fetch().then(msg => msg.first().content)
+Client.on("ready", async () => {
+    const lastMessage = await Client.channels.cache.get(process.env.SAVE_CHANNEL).messages.fetch().then(msg => msg.first().content)
     const fatied = lastMessage.split("/")
 
     Client.lastVideoID = fatied[fatied.length-1]
