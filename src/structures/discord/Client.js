@@ -23,12 +23,11 @@ module.exports = class LeonC2NotifierClient extends Client {
         }
 
         log (text) {
-            console.log(text)
-            
             if(this._logs.length && this._logs[this._logs.length] === text) return
             if(this._logs.length > 10) {
-                this._logs.pop()
+                this._logs.shift()
             }
+            console.log(text)
             this._logs.push(text)
         }
 }
