@@ -1,4 +1,5 @@
 const { Client } = require("discord.js")
+const currentTime = require("../../utils/currentTime")
 
 module.exports = class LeonC2NotifierClient extends Client {
 	constructor(token) {
@@ -18,7 +19,7 @@ module.exports = class LeonC2NotifierClient extends Client {
                 this.on("ready", async () => {
                     const msgs = await this.channels.cache.get(process.env.SAVE_CHANNEL).messages.fetch({limit: 5}).then(msgs => msgs.map(msg => msg.content.split("/")[3]))
                     this.lastVideosID = msgs
-                    this.log(Date.now() + " - Estou online novamente")
+                    this.log("Estou online novamente")
                 })
 
 	}
@@ -46,9 +47,11 @@ module.exports = class LeonC2NotifierClient extends Client {
             if(this._logs.length > 20) {
                 this._logs.shift()
             }
+
+            const time = currentTime()
             console.log(text)
             this._logs.push({
-                time: "0",
+                time: time,
                 message: text
             })
         }
