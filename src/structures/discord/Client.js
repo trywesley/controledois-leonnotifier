@@ -33,15 +33,23 @@ module.exports = class LeonC2NotifierClient extends Client {
 	}
 
         get logs () {
-            return this._logs.join("\n")
+            let message = ""
+            Client._logs.forEach(log => {
+                message = message + "\n " + log.time + " - " + log.message
+            })
+
+            return message
         }
 
         log (text) {
-            if(this._logs.length && this._logs[this._logs.length - 1] === "- " + text) return
+            if(this._logs.length && this._logs[this._logs.length - 1].message === text) return
             if(this._logs.length > 20) {
                 this._logs.shift()
             }
             console.log(text)
-            this._logs.push("- " + text)
+            this._logs.push({
+                time: "0",
+                message: text
+            })
         }
 }
