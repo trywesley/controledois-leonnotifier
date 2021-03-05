@@ -1,7 +1,7 @@
 module.exports = async function sH (id, Client, trueorfalse) {
     const channelRCDN = Client.channels.cache.get(process.env.DISCORD_CHANNEL)    
     const channelSAVE = Client.channels.cache.get(process.env.SAVE_CHANNEL)
-    let message = "Acabei de publicar um vídeo: " + id
+    let message = "Acabei de notificar um novo vídeo: " + id
 
     if(trueorfalse) {
         channelRCDN.send("https://youtu.be/" + id)
