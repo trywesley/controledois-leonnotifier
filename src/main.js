@@ -9,7 +9,7 @@ async function check ()  {
     const lastVideoID = lastVideo.id.split(":")[2]
 
     Client.log("Estou aguardando novos vídeos")
-    
+    console.log("14")
     if(Client.lastVideosID.includes(lastVideoID)) return
     const checked = await checkLeon(lastVideoID)
     sendHandler(lastVideoID, Client, checked)
