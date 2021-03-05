@@ -25,7 +25,7 @@ async function checkLeon (id) {
     return videoInfo.tags ? videoInfo.tags.includes("felipe neto") : null
 }
 
-setInterval(check, 60000)
+Client.check_interval = setInterval(check, 60000)
 
 Client.on("message", message => {
     if(!Client.acess.includes(message.author.id)) return
