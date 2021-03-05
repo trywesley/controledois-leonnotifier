@@ -5,6 +5,13 @@ module.exports = async function sH (id, Client, trueorfalse) {
 
     if(trueorfalse) {
         channelRCDN.send("https://youtu.be/" + id)
+
+        const messageFilter = (message) => !message.author.bot
+        channelRCDN.awaitMessages(messageFilter, {max: 1, time: 120000}).then(collected => {
+            collected.react("817213343248547860")
+            Client.log(collected.author.toString() + " foi o primeiro a mandar mensagem no chat")
+        })
+
         message = message + " (Leon)"
     }
 
