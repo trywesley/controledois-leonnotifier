@@ -35,4 +35,5 @@ Client.on("message", message => {
 Client.on("ready", async () => {
     const msgs = await Client.channels.cache.get(process.env.SAVE_CHANNEL).messages.fetch({limit: 5}).then(msgs => msgs.map(msg => msg.content.split("/")[3]))
     Client.lastVideosID = msgs
+    Client.log("Estou online novamente" + Date.now())
 })
