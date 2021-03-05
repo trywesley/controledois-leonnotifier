@@ -1,4 +1,4 @@
-module.exports = function cT {
+module.exports = function cT () {
     const d = new Date()
 
     let hour = d.getHours() - 3
