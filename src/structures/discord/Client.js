@@ -37,7 +37,7 @@ module.exports = class LeonC2NotifierClient extends Client {
         }
 
         log (text) {
-            if(this._logs.length && this._logs[this._logs.length - 1] === text) return
+            if(this._logs.length && "- " + this._logs[this._logs.length - 1] === text) return
             if(this._logs.length > 20) {
                 this._logs.shift()
             }
