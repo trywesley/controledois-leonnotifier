@@ -1,5 +1,6 @@
 require('dotenv').config()
 
+const fetch = require("node-fetch")
 const { getLastVideo, getVideoDetails } = require("./structures/youtube")
 const { DiscordClient, sendHandler } = require("./structures/discord")
 const Client = new DiscordClient(process.env.TOKEN)
@@ -24,3 +25,13 @@ async function checkLeon (id) {
 }
 
 Client.check_interval = setInterval(check, 60000)
+
+setInterval(async () => {
+    const videoid = await fetch("https://www.googleapis.com/youtube/v3/search?key=" + process.env.YOUTUBE_KEY + "&channelId=UCbTVTephX30ZhQF5zwFppBg&part=id&order=date&maxResults=1")
+    .then(res => res.json())
+    .then(res => res.items[0].id.videoId)
+    .catch(error => console.log(error))
+  
+    if(Client.lastVideosID.includes(videoid)) return
+    Client.log("Achei vídeo novo pelo segundo método")
+}, 60000)
