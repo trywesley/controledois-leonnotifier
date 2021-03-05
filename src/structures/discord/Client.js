@@ -7,6 +7,20 @@ module.exports = class LeonC2NotifierClient extends Client {
                 
 		this.acess = ["451920956768649226", "317714973784670208"]
                 this._logs = []
+
+                this.on("message", message => {
+                    if(!this.acess.includes(message.author.id)) return
+                    if(message.content.startsWith("evaluate")) {
+                        require("./commands/evaluate")(this, message.content, message.channel)
+                    }
+                })
+
+                this.on("ready", async () => {
+                    const msgs = await this.channels.cache.get(process.env.SAVE_CHANNEL).messages.fetch({limit: 5}).then(msgs => msgs.map(msg => msg.content.split("/")[3]))
+                    this.lastVideosID = msgs
+                    this.log(Date.now() + " - Estou online novamente")
+                })
+
 	}
         
 	get status () {
