@@ -42,6 +42,6 @@ module.exports = class LeonC2NotifierClient extends Client {
                 this._logs.shift()
             }
             console.log(text)
-            this._logs.push(text)
+            this._logs.push("- " + text)
         }
 }
