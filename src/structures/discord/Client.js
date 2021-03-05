@@ -35,7 +35,7 @@ module.exports = class LeonC2NotifierClient extends Client {
 
         get logs () {
             let message = ""
-            Client._logs.forEach(log => {
+            this._logs.forEach(log => {
                 message = message + "\n " + log.time + " - " + log.message
             })
 
