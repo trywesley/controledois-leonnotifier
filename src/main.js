@@ -8,6 +8,8 @@ async function check ()  {
     const lastVideo = await getLastVideo()
     const lastVideoID = lastVideo.id.split(":")[2]
     const savedLastVideosID = Client.lastVideosID
+
+    Client.log("Estou aguardando novos vídeos")
     
     if(savedLastVideosID.includes(lastVideoID)) return
     const checked = await checkLeon(lastVideoID)
