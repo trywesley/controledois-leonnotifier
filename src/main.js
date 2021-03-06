@@ -1,6 +1,5 @@
 require('dotenv').config()
 
-const fetch = require("node-fetch")
 const { getLastVideo, getVideoDetails } = require("./structures/youtube")
 const { DiscordClient, sendHandler } = require("./structures/discord")
 const Client = new DiscordClient(process.env.TOKEN)
@@ -21,7 +20,7 @@ async function check ()  {
 
 async function checkLeon (id) {
     const videoInfo = await getVideoDetails(id)
-    return videoInfo.tags ? videoInfo.tags.includes("Rezende") : null
+    return videoInfo.tags ? videoInfo.tags.includes("leon") : null
 }
 
 Client.check_interval = setInterval(check, 60000)
