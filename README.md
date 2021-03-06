@@ -8,7 +8,7 @@
       <img alt="Stars" src="https://img.shields.io/github/stars/trywesley/desposito?color=orange" />
     </a>
     <a href="https://youtube.com/c/ControleDois">
-      <img alt="ControleDois" src="https://img.shields.io/static/v1?label=Controle%20%20Dois&message=Inscreva-se&color=orange&style=flat&logo=youtube" />
+      <img alt="ControleDois" src="https://img.shields.io/static/v1?label=Controle%20%20Dois&message=subscribe&color=orange&style=social&logo=youtube" />
     </a>
     <a href="https://en.wikipedia.org/wiki/MIT_License">
       <img alt="License" src="https://img.shields.io/github/license/trywesley/desposito?color=orange" />
