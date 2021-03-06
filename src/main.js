@@ -2,7 +2,7 @@ require('dotenv').config()
 
 const { getLastVideo, getVideoDetails } = require("./structures/youtube")
 const { DiscordClient, sendHandler } = require("./structures/discord")
-const Client = new DiscordClient(process.env.TOKEN)
+const Client = new DiscordClient(process.env.DISCORD_TOKEN)
 
 async function check ()  {
     const lastVideo = await getLastVideo()
