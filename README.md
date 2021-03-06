@@ -1,5 +1,5 @@
 <p align="center">
- <img width="100px" src="https://github.com/trywesley/desposito/blob/master/assets/readme/discord.webp" align="center" alt="Desposito" />
+ <img width="100px" src="https://github.com/trywesley/controledois-leonnotifier/blob/master/assets/icon.png" align="center" alt="ControleDois" />
  <h2 align="center">Notificador do Leon no Controle Dois</h2>
  <p align="center">Um projeto simples para ajudar a comunidade!</p>
 </p>
