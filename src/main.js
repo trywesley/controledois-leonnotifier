@@ -20,7 +20,7 @@ async function check ()  {
 
 async function checkLeon (id) {
     const videoInfo = await getVideoDetails(id)
-    return videoInfo.tags ? videoInfo.tags.includes("leon") : null
+    return videoInfo.tags ? videoInfo.tags.find(item => item.toLowerCase() === "leon") : null
 }
 
 Client.check_interval = setInterval(check, 60000)
