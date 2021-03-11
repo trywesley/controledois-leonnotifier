@@ -16,3 +16,6 @@
     <br />
   </p>
 </p>
+
+# Sobre
+Se trata de um robô que notifica novos vídeos do Leon no Controle Dois. Para isso, ele utiliza o RSS Feed e a API que o YouTube fornece. Ainda está com um delay considerável para o robô notificar, mas estou trabalhando com o que o YouTube disponibiliza gratuitamente e buscando outras alternativas melhores.
