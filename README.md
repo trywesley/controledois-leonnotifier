@@ -15,6 +15,6 @@
 </p>
 
 # Sobre
-As vezes o YouTube demora um pouco para notificar os vídeos novos, não é mesmo? E quando chega a notificação de um novo vídeo no Controle Dois o Leon não está participando. Aaah, o que podemos fazer para solucionar esse problema? Apresento a você o Leon Notifier!
+As vezes o YouTube demora um pouco para notificar os vídeos novos, não é mesmo? E quando chega a notificação de um novo vídeo no Controle Dois nós ficamos eufóricos para assistir mas logo vemos que o Leon não está participando, isso acaba com a nossa alegria. Aaah, o que podemos fazer para solucionar esse problema? Apresento o Leon Notifier!
 
-Esse robô vai enviar para um determinado canal de texto no seu servidor o link dos novos vídeos do Leon no Controle Dois, simples assim. Você pode configurar os canais e a mensagem que será enviada de acordo com a sua preferência. Por enquanto o projeto está parado pois eu o fiz apenas para estudar um pouco algumas funcionalidades do YouTube, mas se você realmente precisa desse robô crie uma issue explicando a sua situação e, quem sabe, eu dou continuidade.
+Esse robô vai enviar para um determinado canal de texto no seu servidor o link dos novos vídeos do Leon no Controle Dois, simples assim. Você pode configurar os canais e a mensagem que será enviada de acordo com a sua preferência. Por enquanto o projeto está parado pois eu o fiz apenas para estudar um pouco algumas funcionalidades do YouTube, mas se você realmente precisa desse robô crie um [issue](https://github.com/trywesley/LeonNotifier/issues/new) explicando a sua situação e, quem sabe, eu dou continuidade.
