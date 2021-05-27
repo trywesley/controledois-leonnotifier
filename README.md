@@ -1,12 +1,9 @@
 <p align="center">
  <img width="100px" src="https://github.com/trywesley/controledois-leonnotifier/blob/main/assets/icon.png" align="center" alt="ControleDois" />
- <h2 align="center">Notificador do Leon no Controle Dois</h2>
- <p align="center">Um projeto simples para ajudar a comunidade!</p>
+ <h2 align="center">Leon Notifier</h2>
+ <p align="center">Para você que quer receber no discord notificações dos vídeos novos do Leon publicados no Controle Dois!</p>
 </p>
   <p align="center">
-    <a href="https://github.com/trywesley/controledois-leonnotifier/stargazers">
-      <img alt="Stars" src="https://img.shields.io/github/stars/trywesley/desposito?color=orange" />
-    </a>
     <a href="https://youtube.com/c/ControleDois">
       <img alt="ControleDois" src="https://img.shields.io/static/v1?label=Controle%20%20Dois&message=subscribe&color=orange&style=social&logo=youtube" />
     </a>
@@ -18,6 +15,6 @@
 </p>
 
 # Sobre
-Se trata de um robô que notifica novos vídeos do Leon no Controle Dois. Para isso, ele utiliza o RSS Feed e a API que o YouTube fornece. Ainda está com um delay considerável para o robô notificar, mas estou trabalhando com o que o YouTube disponibiliza gratuitamente e buscando outras alternativas melhores.
+As vezes o YouTube demora um pouco para notificar os vídeos novos, não é mesmo? E quando chega a notificação de um novo vídeo no Controle Dois o Leon não está participando. Aaah, o que podemos fazer para solucionar esse problema? Apresento a você o Leon Notifier!
 
-Clone o repositório, instale os pacotes e altere o nome do arquivo `.env.example` para `.env`, substitua as strings pelo que se pede. Se puder dar uma estrelinha no repositório eu ficaria feliz.
+Esse robô vai enviar para um determinado canal de texto no seu servidor o link dos novos vídeos do Leon no Controle Dois, simples assim. Você pode configurar os canais e a mensagem que será enviada de acordo com a sua preferência. Por enquanto o projeto está parado pois eu o fiz apenas para estudar um pouco algumas funcionalidades do YouTube, mas se você realmente precisa desse robô crie uma issue explicando a sua situação e, quem sabe, eu dou continuidade.
